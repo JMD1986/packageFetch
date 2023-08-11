@@ -18,6 +18,13 @@ const RepositoriesList: React.FC = () => {
     console.log(error);
     console.log(loading);
   };
+  function ResultsList() {
+    const list = data.map((data) => {
+      return <li key={data}>{data}</li>;
+    });
+    //@ts-ignore
+    return <ol>{list}</ol>;
+  }
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -31,7 +38,7 @@ const RepositoriesList: React.FC = () => {
 
         {error && <h3>{error}</h3>}
         {loading && <h3>loading...</h3>}
-        {!error && !loading && data}
+        {!error && !loading && <ResultsList />}
       </form>
     </div>
   );
