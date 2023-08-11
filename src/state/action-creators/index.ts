@@ -8,6 +8,7 @@ export const searchRepositories = (term: string) => {
     dispatch({ type: ActionType.SEARCH_REPOSITORIES });
 
     try {
+      console.log(term);
       const { data } = await axios.get(
         "https://registry.npmjs.org/-/v1/search",
         {
